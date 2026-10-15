@@ -24,7 +24,7 @@ struct User* add(struct User * head, char* Username) {
         generateDigest(&(newHead->hash), head);
     }
     
-    return head; // Intentional error: Returning the old head instead of the new head
+    return newHead; // Intentional error: Returning the old head instead of the new head
 }
 
 void printLog(struct User* head) {
