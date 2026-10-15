@@ -90,7 +90,7 @@ void verify(struct User* curr) {
 
         if (prev != NULL) {
             struct Digest prev_digest_computed;
-            generateDigest(&prev_digest_computed, curr); // Intentional error: Generating digest for the wrong node
+            generateDigest(&prev_digest_computed, curr->next); // Intentional error: Generating digest for the wrong node
 
             if (digest_equal(prev_digest_computed, curr->hash)) { // Intentional error: Comparing the wrong hashes
                 printf("User %d passed\n", height);
