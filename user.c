@@ -95,7 +95,7 @@ void verify(struct User* curr) {
             if (digest_equal(prev_digest_computed, curr->hash)) { // Intentional error: Comparing the wrong hashes
                 printf("User %d passed\n", height);
                 printf("\t%-20s", "User Data:");
-                printUser(curr);
+                printUser(prev);
                 printf("\t%-20s", "Saved Hash:");
                 printDigest(curr->hash);
                 printf("\t%-20s", "Calculated Hash:");
@@ -105,7 +105,7 @@ void verify(struct User* curr) {
             else {
                 printf("User %d failed\n", height);
                 printf("\t%-20s", "User Data:");
-                printUser(curr);
+                printUser(prev);
                 printf("\t%-20s", "Saved Hash:");
                 printDigest(curr->hash);
                 printf("\t%-20s", "Calculated Hash:");
